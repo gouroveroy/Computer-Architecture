@@ -48,48 +48,18 @@ arithmetic section will be undertaken. Second, the design of the logic section w
 Finally, the arithmetic section will be modified so that it can perform both arithmetic and logic 
 operations.
 
-\section{Problem Specification with assigned instructions}
-\textbf{Problem Specification:}
-\begin{enumerate}
-    \item Efficiently design (with minimum possible ICs) the ALU according to the specification.
-    \item Implement the following flags:
-    \begin{itemize}
-        \item Carry (C)
-        \item Sign (S)
-        \item Overflow (V)
-        \item Zero (Z)
-    \end{itemize}
-    \item Flags should be affected as per the rules of Assembly Language (with some exceptions).
-    \item However, some exceptions (only for this assignment) has been added to incorporate 
-    flexibility to flag status bits after logical operations. This flexibility is to 
-    make the assignment easier, although it breaks some of the rules of the assembly 
-    programming language.
-    \begin{itemize}
-        \item For NOT Operation:
-            \begin{enumerate}
-                \item After the NOT operation, Z flag is 1 if the answer is 0000 and the Z flag is 
-                0 otherwise; ie. The Z flag functions as it normally would.
-                \item After the NOT operation, if S remains unchanged or it reflects the highest 
-                order bit of the result, both will be accepted. But if the S flag is changed and 
-                it is changed to a wrong value, it will not be accepted.
-                \item To make your life easier, we shall not check the C and V flags after NOT 
-                operation, i.e., you can consider these as Don’t care.                
-            \end{enumerate}
-        \item For AND/OR/XOR Operation:
-            \begin{enumerate}
-                \item C and V should be cleared (0) after the operation.
-                \item S and Z should be changed according to the output.
-            \end{enumerate}
-    \end{itemize}
-    \item Any 2-input SSI (AND, OR, NOT, XOR, etc.) and MSI (MUX, Decoder, Adder, etc.) 
-    chip can be used.
-    \item Emphasis should be given to the efficiency of design and minimization of ICs used.
-    \item For simulation, one can use any simulation software.
-    \item Software design must be at IC level.
-    \item Everyone have to write a report.
-\end{enumerate}
-\textbf{Functional Design Specifications:}
+There are also 4 status outputs (flags) in ALU. They are denoted by C(Carry
+Flag), Z(Zero Flag), V(Overflow Flag), S(Sign Flag). Their representations carry out the
+following meanings:
+\begin{itemize}
+    \item C(Carry Flag): This flag is set when there is a carry out of the most significant bit of the result.
+    \item Z(Zero Flag): This flag is set when the result of the operation is zero.
+    \item V(Overflow Flag): This flag is set when the result of the operation is too large to be represented in the given number of bits.
+    \item S(Sign Flag): This flag is set when the result of the operation is negative.
+\end{itemize}
 
+\section{Problem Specification with assigned instructions}
+Design a 4-bit ALU with three selection bits CS2, CS1, CS0 that can perform the following operations:
 \begin{table}[ht]
     \centering
     \begin{tabular}{|c|c|c|c|}
@@ -112,7 +82,7 @@ operations.
     \caption{Control Signals and Functions of the 4-bit ALU}
 \end{table}
 
-Here, CS2, CS1, and CS0 are the control signals. X means that the value of the signal is not important.
+Here, CS2, CS1, and CS0 are the control signals. X means that the value of the signal is not important. The ALU should have 4 status outputs (flags) C, Z, V, S.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ALU2.png}

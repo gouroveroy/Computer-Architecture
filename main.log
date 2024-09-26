@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.18)  26 SEP 2024 12:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.18)  27 SEP 2024 00:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -165,35 +165,33 @@ Package pdftex.def Info: images/ALU.png  used on input line 42.
 
 
 [2 <./images/ALU.png>]
-<images/ALU2.png, id=20, 630.55576pt x 194.52675pt>
+<images/ALU2.png, id=19, 630.55576pt x 194.52675pt>
 File: images/ALU2.png Graphic file (type png)
 <use images/ALU2.png>
-Package pdftex.def Info: images/ALU2.png  used on input line 118.
+Package pdftex.def Info: images/ALU2.png  used on input line 88.
 (pdftex.def)             Requested size: 424.82523pt x 131.06242pt.
 
 
-[3]
+[3 <./images/ALU2.png>]
 
-[4 <./images/ALU2.png>]
-
-[5] (main.aux)
+[4] (main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1961 strings out of 473899
- 32297 string characters out of 5726972
- 440424 words of memory out of 5000000
- 24851 multiletter control sequences out of 15000+600000
+ 1959 strings out of 473899
+ 32235 string characters out of 5726972
+ 439424 words of memory out of 5000000
+ 24849 multiletter control sequences out of 15000+600000
  563274 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,65p,264b,249s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,12n,65p,264b,261s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on main.pdf (5 pages, 170754 bytes).
+Output written on main.pdf (4 pages, 164986 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
+ 65 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
