@@ -3,17 +3,41 @@
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{caption}
 \usepackage{graphicx}
+
 \restylefloat{figure}
 
-\title{Your Title}
-\author{Your Name}
-\date{\today}
+\title{Bangladesh University of Engineering and Technology\\
+CSE 209\\
+Computer Architecture Sessional\\}
+\author{}
+\date{}
 
 
 \begin{document}
 
 \maketitle
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/BUET.png}
+\end{figure}
+\begin{centering}
+    Assignment-1\\
+    4-bit ALU Design\\
+    \vspace{10mm}
+    Section A1\\
+    Group 01\\
+\end{centering}
+\vspace{15mm}
+Group Members:
+\begin{enumerate}
+    \item Khalid Hasan Tuhin - 2105002
+    \item K.M. Mehemud Azad - 2105014
+    \item Arnob Biswas - 2105015
+    \item Zaki Rehnoom Unmona - 2105016
+    \item Gourove Roy - 2105017
+\end{enumerate}
 \pagebreak
 
 \section{Introduction}
@@ -94,24 +118,68 @@ Here, CS2, CS1, and CS0 are the control signals. X means that the value of the s
 \section{Truth Table}
 \begin{table}[ht]
     \centering
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
         \hline
-        CS2 & CS1 & CS0 & Functions & X & S11 & S10 & Y & $\bar{\textnormal{E2}}$ & S2 & Cin \\
+        CS2 & CS1 & CS0 & Functions & $X_i$ & $Y_i$ & $Z_i$ & Cin \\
         \hline
-        0 & 0 & 0 & Add & A & 0 & 0 & B & 0 & 0 & 0 \\
+        0 & 0 & 0 & Add & $A_i$ & $B_i$ & $C_i$ & 0 \\
         \hline
-        0 & 0 & 1 & AND & AB & 0 & 1 & 0 & 1 & X & 0 \\
+        0 & 0 & 1 & AND & $A_iB_i$ & 0 & $C_i$ & 0 \\
         \hline
-        0 & 1 & X & Sub with borrow & A & 0 & 0 & B' & 0 & 1 & 0 \\
+        0 & 1 & X & Sub with borrow & $A_i$ & $\bar{B_i}$ & $C_i$ & 0 \\
         \hline
-        1 & 0 & 0 & Complement A & A' & 1 & 0 & 0 & 1 & X & 0 \\
+        1 & 0 & 0 & Complement $A_i$ & $\bar{A_i}$ & 0 & $C_i$ & 0 \\
         \hline
-        1 & 0 & 1 & OR & A+B & 1 & 1 & 0 & 1 & X & 0 \\
+        1 & 0 & 1 & OR & $A_i$+$B_i$ & 0 & $C_i$ & 0 \\
         \hline
-        1 & 1 & X & NEG A & A' & 1 & 0 & 0 & 1 & X & 1 \\
+        1 & 1 & X & NEG A & $\bar{A_i}$ & 0 & $C_i$ & 1 \\
         \hline
     \end{tabular}
-    \caption{Truth Table of the 4-bit ALU}
+    \caption{Truth Table of $X_i, Y_i, Z_i, Cin$}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        CS2 & CS1 & CS0 & Functions & $X_i$ & S11 & S10 \\
+        \hline
+        0 & 0 & 0 & Add & $A_i$ & 0 & 0 \\
+        \hline
+        0 & 0 & 1 & AND & $A_iB_i$ & 0 & 1 \\
+        \hline
+        0 & 1 & X & Sub with borrow & $A_i$ & 0 & 0 \\
+        \hline
+        1 & 0 & 0 & Complement $A_i$ & $\bar{A_i}$ & 1 & 0 \\
+        \hline
+        1 & 0 & 1 & OR & $A_i$+$B_i$ & 1 & 1 \\
+        \hline
+        1 & 1 & X & NEG A & $\bar{A_i}$ & 1 & 0 \\
+        \hline
+    \end{tabular}
+    \caption{Truth Table of MUX input for $X_i$}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        CS2 & CS1 & CS0 & Functions & $Y_i$ & S2 \\
+        \hline
+        0 & 0 & 0 & Add & $B_i$ & 0 \\
+        \hline
+        0 & 0 & 1 & AND & 0 & X \\
+        \hline
+        0 & 1 & X & Sub with borrow & $\bar{B_i}$ & 1 \\
+        \hline
+        1 & 0 & 0 & Complement 0 & 0 & X \\
+        \hline
+        1 & 0 & 1 & OR & 0 & X \\
+        \hline
+        1 & 1 & X & NEG A & 0 & X \\
+        \hline
+    \end{tabular}
+    \caption{Truth Table of MUX input for $Y_i$}
 \end{table}
 
 \section{Block Diagram}
@@ -139,10 +207,14 @@ Here, CS2, CS1, and CS0 are the control signals. X means that the value of the s
         \hline
         7483 & 2 \\
         \hline
+        Total & 12 \\
+        \hline
     \end{tabular}
+    \caption{ICs used with count}
 \end{table}
 
 \section{The simulator used along with the version number}
+Logisim - 2.7.1
 
 \section{Discussions}
 
