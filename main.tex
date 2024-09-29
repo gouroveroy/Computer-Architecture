@@ -5,6 +5,9 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage{graphicx}
+\usepackage[label=corner]{karnaugh-map}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
 
 \restylefloat{figure}
 
@@ -113,7 +116,84 @@ Here, CS2, CS1, and CS0 are the control signals. X means that the value of the s
     \caption{Block Diagram of a 4-bit ALU}
 \end{figure}
 
-\section{Detailed design steps with k-maps (if applicable)}
+\section{Detailed design steps with k-maps}
+\subsection{Design Steps}
+\subsection{K-maps}
+We will be following table \ref{table_xi} and \ref{table_yi} to construct the K-maps for selection bits, enable bit of multiplexers and $C_{in}$.
+
+The IC of parallel adder takes $X_i$ and $Y_i$ and $C_{in}$ as input.We need  $X_i$ as $A_i$ or its complement or its logical changes with B. These values are  received as $X_i$(output of the 4 to 1 multiplexer) and the selection bits for the multiplexer are $S_{11}$ and $S_{10}$. For $Y_i$ we want $B_i$ or its compliment as the output of 2 to 1 multiplexer. The selection and enable bit of this(2 to 1 MUX) multiplexer are $S_2$ and $\overline{E_2}$ respectively. The k-map for the selection bits, enable bit of the multiplexer and carry input $C_{in}$ are as follows:\\
+
+\subsubsection{K-map for $S_{11}$}
+\begin{center}
+\begin{karnaugh-map}[2][4][1][$cs0$][$cs1$][$cs2$]
+    \minterms{4,5,6,7}
+    \maxterms{0,1,2,3}
+    \implicant{6}{5}
+\end{karnaugh-map}
+\end{center}
+We can easily express $S_{11}$ as following: 
+
+\[S_{11}=C_{S_2}\]
+
+\subsubsection{K-map for $S_{10}$}
+\begin{center}
+\begin{karnaugh-map}[2][4][1][$cs0$][$cs1$][$cs2$]
+    \minterms{1,5}
+    \maxterms{0,2,3,4,6,7}
+    \implicantedge{1}{1}{5}{5}
+\end{karnaugh-map}
+\end{center}
+There are two minterms:
+
+\[ S_{10} = {\overline{C_{S_1}}C_{S_0}}\]
+
+\subsubsection{K-map for $S_{10}$}
+$S_{2}$ is the selection bit for the multiplexer that selects B and $\bar{B}$ as input of a 2 to 1 MUX .
+\begin{center}
+\begin{karnaugh-map}[2][4][1][$cs0$][$cs1$][$cs2$]
+    \minterms{2,3}
+    \maxterms{0}
+    \terms{6}{$X$}
+    \terms{7}{$X$}
+    \terms{4}{$X$}
+    \terms{5}{$X$}
+    \terms{1}{$X$}
+    
+    \implicant{2}{7}
+\end{karnaugh-map}
+\end{center}
+The simplified form for $S_{2}$ will be:
+
+\[ S_{2} = {C_{S_1}}\]
+
+\subsubsection{K-map for $\overline{E}$}
+$\overline{E}$ is the enable bit for the 2 to 1 multiplexer that decides when the multiplexer will be functioning( will select one of its inputs) or not(in ground state).
+\begin{center}
+\begin{karnaugh-map}[2][4][1][$cs0$][$cs1$][$cs2$]
+    \minterms{1,4,5,6,7}
+    \maxterms{0,2,3}
+    \implicantedge{1}{1}{5}{5}
+    \implicant{6}{5}
+\end{karnaugh-map}
+\end{center}
+
+
+\[ \overline{E} =  {C_{S_2}+\overline{C_{S_1}}C_{S_0}}\]
+
+\subsubsection{K-map for $C_{in}$}
+It is the input carry bit of the adder used inside arithmetic unit.
+\begin{center}
+\begin{karnaugh-map}[2][4][1][$cs0$][$cs1$][$cs2$]
+    \minterms{6,7}
+    \maxterms{0, 1, 2, 3, 4, 5}
+    \implicant{6}{7}
+\end{karnaugh-map}
+\end{center}
+\[C_{in}=C_{S_2}C_{S_1}\]
+
+
+
+
 
 \section{Truth Table}
 \begin{table}[ht]
@@ -158,7 +238,9 @@ Here, CS2, CS1, and CS0 are the control signals. X means that the value of the s
         \hline
     \end{tabular}
     \caption{Truth Table of MUX input for $X_i$}
+    \label{table_xi}
 \end{table}
+\newpage
 
 \begin{table}[ht]
     \centering
@@ -180,11 +262,42 @@ Here, CS2, CS1, and CS0 are the control signals. X means that the value of the s
         \hline
     \end{tabular}
     \caption{Truth Table of MUX input for $Y_i$}
+    \label{table_yi}
 \end{table}
 
+% \newpage
 \section{Block Diagram}
 
+\vspace{5mm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Blank diagram.png}
+    \caption{ Block Digram of ALU }
+    \label{fig:enter-label}
+\end{figure}
+
+\newpage
 \section{Complete Circuit Diagram}
+
+
+     \begin{figure}[H]
+         \centering
+         \includegraphics[width=0.8\textwidth]{images/pic1.jpg}
+         \caption{Input Processing Unit}
+         \label{fig:alu_a}
+     \end{figure}
+     \begin{figure}[H]
+         \centering
+         \includegraphics[width=0.8\textwidth]{images/pic2.jpg}
+         \caption{Arithmetic Logic Unit (ALU)}
+         \label{fig:alu_b}
+     \end{figure}
+     \begin{figure}[H]
+         \centering
+         \includegraphics[width=0.8\textwidth]{images/pic3.png}
+         \caption{Complete Design}
+         \label{fig:alu_c}
+     \end{figure}
 
 \section{ICs used with count as a chart}
 \begin{table}[ht]
