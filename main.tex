@@ -120,6 +120,33 @@ Here, CS2, CS1, and CS0 are the control signals. X means that the value of the s
 
 \section{Detailed design steps with k-maps}
 \subsection{Design Steps}
+\begin{enumerate}
+    \item Here we have to perform four types of arithmetic operations (Add, Sub with borrow, Negation, Complement) and two types of logical operations(logical AND , logical OR).
+
+    \item For the adder,the first input $X_i$ is either $A_i$ or $\bar{A_i}$ or $A_i B_i$  or $A_i + B_i$.We used a $4 \times 1$    multiplexer  for  each  bit.
+     The MUX has  $S_{11}$ and $S_{10}$ as selection bits.The selection bits are controlled by control bits($c_{s_2}$,$c_{s_1}$,$c_{s_0}$).The details is shown in the truth table and k-Map.
+
+     \item For the adder,the second input $Y_i$ is either $B_i$ or 0. We used a $2 \times 1$ multiplexer for each bit. 
+     The mux has $S_{2}$ as its selection bit.The selection bit is controlled by control bits($c_{s_2}$,$c_{s_1}$,$c_{s_0}$).The details in shown in the truth table and k-Map.
+
+    \item The input carry($C_{in}$) of the adder IC is either 0 or 1.It should be 1 for negation.This is also controlled by control bits($c_{s_2}$,$c_{s_1}$,$c_{s_0}$).The details is shown in the truth table and k-Map.
+
+    \item In the arithmetic unit, the adder adds $A$, $B$ with $C_{in}=0$ for Add. The multiplexers provide $Y_i$ as a 0 for complement and negation operation.During negation,$X_i$=$\overline{A_i}$ and $Y_i$=0 and $C_{in}$=1. 
+    
+    \item During logical operations,$X_i$ is transferred as $Y_i$=0 and $C_{in}$=0.
+
+    \item Zero flag, ZF is computed by adding the 4 output bits using 3 OR gates and then inverting $O_0 + O_1+O_2+O_3$ by 1 NOT gate.
+    \item The carry flag($C$) is directly obtained from $C_{out}$ of the parallel adder
+    \item The sign flag(SF) is obtained from the MSB of the sum($S_3$).
+    \item  For the overflow flag,we needed $C_{out}$ and $C_3$. $C_{out}$ is directly accessible from the Adder IC. $C_3$ is calculated as below:
+    \begin{center}
+        $S_3$ = $X_3 \oplus Y_3 \oplus C_3$\\
+        $S_3 \oplus C_3$ = $X_3 \oplus Y_3$\\
+        $C_3$ = $X_3 \oplus Y_3 \oplus S_3$\\
+        V = $C_{out} \oplus C_3$\\
+        V = $C_{out} \oplus X_3 \oplus Y_3 \oplus  S_3$
+    \end{center}
+\end{enumerate}
 \subsection{K-maps}
 We will be following table \ref{table_xi} and \ref{table_yi} to construct the K-maps for selection bits, enable bit of multiplexers and $C_{in}$.
 
