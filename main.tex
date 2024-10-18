@@ -1,6 +1,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[margin=2.5cm]{geometry}
+\usepackage{array}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{caption}
@@ -8,6 +9,7 @@
 \usepackage[label=corner]{karnaugh-map}
 \usepackage{tikz, pgfplots}
 \usetikzlibrary{positioning}
+\pgfplotsset{compat=1.18}
 
 \restylefloat{figure}
 
@@ -318,9 +320,9 @@ It is the input carry bit of the adder used inside arithmetic unit.
         \hline
         7486 & 1 \\
         \hline
-        7483 & 2 \\
+        7483 & 1 \\
         \hline
-        Total & 12 \\
+        Total & 11 \\
         \hline
     \end{tabular}
     \caption{ICs used with count}
@@ -347,5 +349,24 @@ For this assignment, our goal was to develop a 4-bit ALU that could handle 4 ari
 
 The assignment provided a comprehensive learning experience in digital system design, combining both software and hardware implementations. It emphasized the importance of meticulous planning, particularly in optimizing the use of integrated circuits (ICs), and highlighted the value of iterative development for debugging and refining the design. Attention to detail in wiring, aesthetics, and testing ensured a functional and visually appealing hardware design. Collaborative documentation underscored the need for clear communication within a team. Overall, the assignment offered valuable lessons beyond just ALU construction, encompassing broader aspects of hardware and software integration.
 \section{Contribution of Each Member}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|p{8cm}|}
+        \hline
+        \textbf{StudentID} & \textbf{Member} & \textbf{Contribution} \\
+        \hline
+        2105002 & Khalid Hasan Tuhin & IC minimization, component arrangement, hardware implementation, report writing(section 9) \\
+        \hline
+        2105014 & K.M. Mehemud Azad & IC minimization, Simplification of Expressions, component arrangement, hardware implementation, report writing(section 8) \\
+        \hline
+        2105015 & Arnob Biswas & Logisim simulation, component arrangement, hardware implementation, report writing(section 3, 5, 6) \\
+        \hline
+        2105016 & Zaki Rehnoom Unmona & Logic Design and Simplification of Expressions, Logisim simulation, hardware implementation, report writing(section 9) \\
+        \hline
+        2105017 & Gourove Roy & Component arrangement, Hardware implementation, verification and testing, report writing(section 1, 2, 4, 7, 10) \\
+        \hline
+    \end{tabular}
+    \caption{Contribution of Each Member}
+\end{table}
 
 \end{document}
