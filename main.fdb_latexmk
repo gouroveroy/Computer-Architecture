@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1729268256.86788 "/Users/khalidhasantuhin/Library/CloudStorage/OneDrive-BUET/2-2/Computer Architecture/Submission/Computer-Architecture/main.tex" "main.pdf" "main" 1729268257.9224 0
+["pdflatex"] 1729271030.14543 "/Users/khalidhasantuhin/Library/CloudStorage/OneDrive-BUET/2-2/Computer Architecture/Submission/Computer-Architecture/main.tex" "main.pdf" "main" 1729271031.18554 0
   "/Users/khalidhasantuhin/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1728826958.76233 82507 a9eef8696c92627b87e9975edea03b2a ""
   "/Users/khalidhasantuhin/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1726328609.12557 12668 02ae113a0f903e4e7b64a805305e3ae8 ""
   "/Users/khalidhasantuhin/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1725307723.454 21089197 7a6f2ec906dbbc5bc04242f3b87c7094 ""
@@ -165,7 +165,7 @@
   "/Users/khalidhasantuhin/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/array.sty" 1725306311.34889 14067 1383bd6ee23ab18ae0e796155404deb7 ""
   "/Users/khalidhasantuhin/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1725306327.68202 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "/Users/khalidhasantuhin/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xstring/xstring.sty" 1728826958.34023 123 a302f2c651a95033260db60e51527ae8 ""
-  "/Users/khalidhasantuhin/Library/CloudStorage/OneDrive-BUET/2-2/Computer Architecture/Submission/Computer-Architecture/main.tex" 1729268255.92661 13788 b66687ff091ba5ee8ebb9185ebab2c55 ""
+  "/Users/khalidhasantuhin/Library/CloudStorage/OneDrive-BUET/2-2/Computer Architecture/Submission/Computer-Architecture/main.tex" 1729271029.94506 14895 437cafaea5a2d66b3500e857fdbf76ba ""
   "images/ALU.png" 1728830219.96222 39197 e5950c329b66ee1c5189ec5eff667d04 ""
   "images/ALU2.png" 1728830219.96249 32305 7012fde6e0c6cb30c20d6297e874a7e9 ""
   "images/BUET.png" 1728830219.96267 8890 3a301102e97cfa6cbea047eaf6d7784e ""
@@ -173,8 +173,8 @@
   "images/pic1.jpg" 1728830219.96346 146702 2fe292e08e0c1edb70b28a7e5177656b ""
   "images/pic2.jpg" 1728830219.9638 77106 5a350db248b0d6de2743da7340c72f9d ""
   "images/pic3.png" 1728830219.96401 17565 c71d7da940476bbf005873a4f56fbdb5 ""
-  "main.aux" 1729268257.82513 3806 75f042b95735daac23f9a86d96019fa9 "pdflatex"
-  "main.tex" 1729268255.92661 13788 b66687ff091ba5ee8ebb9185ebab2c55 ""
+  "main.aux" 1729271031.08779 3806 75f042b95735daac23f9a86d96019fa9 "pdflatex"
+  "main.tex" 1729271029.94506 14895 437cafaea5a2d66b3500e857fdbf76ba ""
   (generated)
   "main.aux"
   "main.log"

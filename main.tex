@@ -339,6 +339,10 @@ For this assignment, our goal was to develop a 4-bit ALU that could handle 4 ari
 
 
 \begin{itemize}
+    \item In our design, we initially required 12 integrated circuits (ICs) for the software implementation in Logisim, but during practical implementation, we were able to achieve the same functionality using only 11 ICs. The discrepancy arises from how the 7483 Adder IC behaves differently in Logisim compared to the physical Adder IC.
+    In our design, the overflow (denoted as V) is calculated as the XOR of the last two carries, C3 and C4. In Logisim, we couldn't directly access the C4 output from the Adder IC, as there is no dedicated output pin for C4. To address this limitation, we had to add an extra IC in the software design to generate the overflow functionality.
+    However, in the real-world implementation using the actual 7483 Adder IC, accessing C4 was straightforward, eliminating the need for an additional IC. As a result, we reduced the IC count from 12 in the software implementation to just 11 in the practical circuit.
+    This optimization highlights the minor differences between simulation tools and physical hardware, and how practical knowledge can streamline the design.
     \item 
     Throughout the process, we repeatedly reviewed and revised the design to optimize it, aiming to minimize the number of ICs used. Each group member put in a great deal of effort to achieve this, and the experience has been a valuable learning opportunity for all of us.
     \item We aimed to ensure that our hardware design was efficient and well-organized, which required us to repeatedly restart the design process from scratch on multiple occasions.
